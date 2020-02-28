@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Album {
     private String year, title;
-    public ArrayList<Song> songs = new ArrayList<Song>();
+    private ArrayList<Song> songs = new ArrayList<Song>();
 
     Album(String year, String title) {
         this.year = year;
