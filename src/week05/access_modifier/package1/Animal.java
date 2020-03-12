@@ -6,16 +6,16 @@ public class Animal {
     protected String sound = "Roar...";
     public String color = "Black";
 
-    void sayWow() {
-        System.out.println("Wow from Animal");
-    }
-    private void sayHello() {
-        System.out.println("Hello from Animal");
-    }
-    protected void sayHi() {
-        System.out.println("Hi from Animal");
-    }
-    public void sayHaha() {
-        System.out.println("Haha from Animal");
-    }
+//    void sayWow() {
+//        System.out.println("Wow from Animal");
+//    }
+//    private void sayHello() {
+//        System.out.println("Hello from Animal");
+//    }
+//    protected void sayHi() {
+//        System.out.println("Hi from Animal");
+//    }
+//    public void sayHaha() {
+//        System.out.println("Haha from Animal");
+//    }
 }
