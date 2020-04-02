@@ -13,5 +13,4 @@ public class Book {
     public String getBookInfo(){
         return this.author + ". " + this.year + ". " + this.title + ". " + this.publisher + ".";
     }
-
 }
