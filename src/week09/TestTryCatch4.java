@@ -2,9 +2,9 @@ package week09;
 
 public class TestTryCatch4 {
     public static void main(String[] args){
+        int arr[] = {1,3,5,7};
         try{
-            int arr[] = {1,3,5,7};
-            System.out.println(arr[10]);
+            System.out.println(arr[5]);
         }catch(ArrayIndexOutOfBoundsException e){
             System.out.println(e);
         }

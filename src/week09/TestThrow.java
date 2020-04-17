@@ -9,7 +9,11 @@ public class TestThrow {
     }
 
     public static void main(String[] args){
-        validate(13);
+        try {
+            validate(13);
+        }catch (Exception e){
+            System.out.println(e);
+        }
         System.out.println("normal flow...");
     }
 }
