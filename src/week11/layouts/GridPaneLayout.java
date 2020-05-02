@@ -55,7 +55,7 @@ public class GridPaneLayout extends Application {
         //Arranging all the nodes in the grid
         gridPane.add(text1, 0, 0);
         gridPane.add(textField1, 1, 0);
-        gridPane.add(text2, 0, 1);
+        gridPane.add(text2, 2, 0);
         gridPane.add(textField2, 1, 1);
         gridPane.add(button1, 0, 2);
         gridPane.add(button2, 1, 2);

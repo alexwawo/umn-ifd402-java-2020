@@ -32,12 +32,12 @@ public class HBoxLayout extends Application {
         HBox hbox = new HBox();
 
         //Setting the space between the nodes of a HBox pane
-        hbox.setSpacing(10);
+        hbox.setSpacing(30);
 
         //Setting the margin to the nodes
         hbox.setMargin(textField, new Insets(20, 20, 20, 20));
-        hbox.setMargin(playButton, new Insets(20, 20, 20, 20));
-        hbox.setMargin(stopButton, new Insets(20, 20, 20, 20));
+//        hbox.setMargin(playButton, new Insets(20, 20, 20, 20));
+//        hbox.setMargin(stopButton, new Insets(20, 20, 20, 20));
 
         //retrieving the observable list of the HBox
         ObservableList list = hbox.getChildren();
