@@ -16,51 +16,42 @@ public class Controller {
     private DB db = new DB();
 
     @FXML
-    private TextField id_field;
+    private TextField nim_field;
 
     @FXML
-    private TextField name_field;
+    private TextField nama_field;
 
     @FXML
-    private TextField auth_field;
+    private TextField prodi_field;
 
     @FXML
     protected void handleAddButtonAct(ActionEvent event){
-        System.out.println("hello");
-        System.out.println(id_field.getText());
-        db.addDB(Integer.parseInt(id_field.getText()), name_field.getText(), auth_field.getText());
+        db.insert(nim_field.getText() , nama_field.getText(), prodi_field.getText());
     }
 
     @FXML
     protected void handleDelButtonAct(ActionEvent event){
-        db.delDB(Integer.parseInt(id_field.getText()));
+        db.delete(nim_field.getText());
     }
 
     @FXML
     protected void handleUpdateButtonAct(ActionEvent event){
-
+        db.update(nim_field.getText(), nama_field.getText(), prodi_field.getText());
     }
 
     @FXML
     protected void handleShowButtonAct(){
-        int i = 0;
         try {
-            GridPane gridPane = new GridPane();
-            ResultSet resultSet = db.showDB();
-            int n = resultSet.getRow();
-            gridPane.setGridLinesVisible(true);
-            gridPane.setAlignment(Pos.CENTER);
-            gridPane.setScaleX(2);
-            gridPane.setScaleY(2);
+            ResultSet resultSet = db.select();
             while(resultSet.next()){
-                System.out.println(i);
-                gridPane.add(new Label(resultSet.getString("id")), 0, i);
-                gridPane.add(new Label(resultSet.getString("judul")), 1, i);
-                gridPane.add(new Label(resultSet.getString("penulis")), 2, i);
-                i++;
+                System.out.println(resultSet.getString("id"));
+                System.out.println(resultSet.getString("nim"));
+                System.out.println(resultSet.getString("nama"));
+                System.out.println(resultSet.getString("prodi"));
+                System.out.println();
             }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

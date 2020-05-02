@@ -11,15 +11,13 @@ public class DB {
     private static final String USER = "root";
     private static final String PASS = "";
 
-    void addDB(int id, String nama, String penulis){
-        System.out.println(nama);
-        String sqlAdd = "INSERT INTO buku(id, judul, penulis) VALUES (\"" + id + ", \"" + nama + ", \"" + penulis + "\")";
-        sqlAdd = "INSERT INTO buku(id, judul, penulis) VALUES ('1', '2', '3')";
+    void insert(String nim, String nama, String prodi){
+        String sqlInsert = "INSERT INTO mahasiswa(nim, nama, prodi) VALUES ('" + nim + "', '" + nama + "', '" + prodi + "')";
         try{
             Class.forName(JDBC_DRIVER);
             Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = connection.createStatement();
-            statement.executeUpdate(sqlAdd);
+            statement.executeUpdate(sqlInsert);
             statement.close();
             connection.close();
         }catch(Exception e){
@@ -27,13 +25,29 @@ public class DB {
         }
     }
 
-    void delDB(int id){
-        String delSql = "DELETE FROM buku WHERE id = " + id;
+    void update(String nim, String nama, String prodi) {
+        String sqlUpdate = "UPDATE mahasiswa " +
+                "SET nama = '" + nama + "', prodi = '" + prodi + "'" +
+                "WHERE nim = '" + nim + "'";
         try{
             Class.forName(JDBC_DRIVER);
             Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = connection.createStatement();
-            statement.executeUpdate(delSql);
+            statement.executeUpdate(sqlUpdate);
+            statement.close();
+            connection.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    void delete(String nim){
+        String sqlDelete = "DELETE FROM mahasiswa WHERE nim = " + nim;
+        try{
+            Class.forName(JDBC_DRIVER);
+            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(sqlDelete);
             statement.close();
             connection.close();
         } catch (Exception e) {
@@ -41,9 +55,9 @@ public class DB {
         }
     }
 
-    ResultSet showDB(){
+    ResultSet select(){
         ResultSet resultSet = null;
-        String sql = "SELECT * FROM buku";
+        String sql = "SELECT * FROM mahasiswa";
         try{
             Class.forName(JDBC_DRIVER);
             Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
