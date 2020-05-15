@@ -26,10 +26,10 @@ public class Mahasiswa {
     public String getProdi() { return prodi.get(); }
 
     // Setters
-    public void setId(Integer value) { id.set(value); }
-    public void setNim(String value) { nim.set(value); }
-    public void setNama(String value) { nama.set(value); }
-    public void setProdi(String value) { prodi.set(value); }
+//    public void setId(Integer value) { id.set(value); }
+//    public void setNim(String value) { nim.set(value); }
+//    public void setNama(String value) { nama.set(value); }
+//    public void setProdi(String value) { prodi.set(value); }
 
     // Property values
     public IntegerProperty idProperty() { return id; }

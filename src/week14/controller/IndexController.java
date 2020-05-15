@@ -40,7 +40,7 @@ public class IndexController implements Initializable {
 
     // Initialize observable list to hold database data
     private ObservableList<Mahasiswa> data;
-    private DBConnection dbConnection;
+    private DBConnection dbConnection = new DBConnection();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -50,7 +50,7 @@ public class IndexController implements Initializable {
         radioDelete.setToggleGroup(group);
         radioNew.setSelected(true);
 
-        dbConnection = new DBConnection();
+//        dbConnection = new DBConnection();
 
         // Step 1. Connect to DB
         Connection conn = dbConnection.connect();
@@ -75,7 +75,7 @@ public class IndexController implements Initializable {
         columnProdi.setCellValueFactory(new PropertyValueFactory<>("prodi"));
 
         // Fill table with data
-        tableMahasiswa.setItems(null);
+//        tableMahasiswa.setItems(null);
         tableMahasiswa.setItems(data);
 
         // When user clicked the RadioButton
@@ -96,8 +96,20 @@ public class IndexController implements Initializable {
                         textFieldProdi.setText("");
                     }else if(mode.equals("Edit")){
                         btnAction.setText("Update");
+                        textFieldNim.setDisable(false);
+                        textFieldNama.setDisable(false);
+                        textFieldProdi.setDisable(false);
+                        textFieldNim.setText(selectedMhs.getNim());
+                        textFieldNama.setText(selectedMhs.getNama());
+                        textFieldProdi.setText(selectedMhs.getProdi());
                     }else if(mode.equals("Delete")){
                         btnAction.setText("Delete");
+                        textFieldNim.setDisable(true);
+                        textFieldNama.setDisable(true);
+                        textFieldProdi.setDisable(true);
+                        textFieldNim.setText(selectedMhs.getNim());
+                        textFieldNama.setText(selectedMhs.getNama());
+                        textFieldProdi.setText(selectedMhs.getProdi());
                     }
                 }
             }
