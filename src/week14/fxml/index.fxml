@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="week14.controller.IndexController">
+   <children>
+      <Label layoutX="244.0" layoutY="14.0" text="Mahasiswa">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <TableView fx:id="tableMahasiswa" layoutX="14.0" layoutY="56.0" prefHeight="317.0" prefWidth="345.0">
+        <columns>
+          <TableColumn fx:id="columnNim" prefWidth="82.0" text="NIM" />
+          <TableColumn fx:id="columnNama" prefWidth="140.0" text="Nama" />
+            <TableColumn fx:id="columnProdi" prefWidth="121.0" text="Prodi" />
+        </columns>
+      </TableView>
+      <Label layoutX="379.0" layoutY="108.0" text="NIM" />
+      <Label layoutX="379.0" layoutY="138.0" text="Nama" />
+      <Label layoutX="379.0" layoutY="170.0" text="Prodi" />
+      <TextField fx:id="textFieldNim" layoutX="436.0" layoutY="103.0" prefHeight="26.0" prefWidth="150.0" />
+      <TextField fx:id="textFieldNama" layoutX="436.0" layoutY="133.0" prefHeight="26.0" prefWidth="150.0" />
+      <TextField fx:id="textFieldProdi" layoutX="436.0" layoutY="165.0" prefHeight="26.0" prefWidth="150.0" />
+
+      <RadioButton fx:id="radioNew" layoutX="379.0" layoutY="65.0" mnemonicParsing="false" text="New" />
+      <RadioButton fx:id="radioEdit" layoutX="447.0" layoutY="65.0" mnemonicParsing="false" text="Edit" />
+      <RadioButton fx:id="radioDelete" layoutX="511.0" layoutY="65.0" mnemonicParsing="false" text="Delete" />
+      <Button fx:id="btnAction" layoutX="375.0" layoutY="202.0" mnemonicParsing="false" onAction="#handleBtnAction" prefHeight="26.0" prefWidth="212.0" text="Button" />
+   </children>
+</AnchorPane>

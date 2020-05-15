@@ -1,4 +1,4 @@
-package week13;
+package week14;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main13 extends Application {
+public class Main14 extends Application {
 
     public static void main(String[] args) {
         launch(args);
@@ -14,7 +14,7 @@ public class Main13 extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/week13/fxml/index.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/week14/fxml/index.fxml"));
         stage.setTitle("Mahasiswa");
         stage.setScene(new Scene(root));
         stage.show();

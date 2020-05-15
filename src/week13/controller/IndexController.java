@@ -84,6 +84,19 @@ public class IndexController implements Initializable {
                 int index = tableMahasiswa.getSelectionModel().getSelectedIndex();
                 Mahasiswa mhs = tableMahasiswa.getItems().get(index);
                 System.out.println(mhs.getNama());
+//                Parent root;
+//                try {
+//                    root = FXMLLoader.load(getClass().getResource("/week13/fxml/edit.fxml"));
+//                    Stage stage = new Stage();
+//                    stage.setTitle("Edit Mahasiswa");
+//                    stage.setScene(new Scene(root));
+//                    stage.show();
+//
+//                    // Hide this current window (if this is what you want)
+////                    ((Node)(event.getSource())).getScene().getWindow().hide();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
             }
         });
     }
@@ -127,7 +140,7 @@ public class IndexController implements Initializable {
 //        columnNama.setCellValueFactory(new PropertyValueFactory<>("nama"));
 //        columnProdi.setCellValueFactory(new PropertyValueFactory<>("prodi"));
 //
-//        tableMahasiswa.setItems(null);
+////        tableMahasiswa.setItems(null);
 //        tableMahasiswa.setItems(data);
     }
 }

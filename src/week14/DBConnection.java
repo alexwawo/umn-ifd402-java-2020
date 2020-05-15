@@ -1,8 +1,7 @@
-package week13;
+package week14;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class DBConnection {
     public Connection connect() {
