@@ -34,8 +34,8 @@ public class IndexController implements Initializable {
     @FXML private Button btnAction;
 
     final ToggleGroup group = new ToggleGroup();
-    String mode;
-    Mahasiswa selectedMhs = null;
+    String mode = "New"; // New, Edit or Delete
+    Mahasiswa selectedMhs = null; // Selected Mahasiswa when user clicked a row in the data table
 
 
     // Initialize observable list to hold database data
@@ -44,6 +44,7 @@ public class IndexController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Grouping the RadioButton
         radioNew.setToggleGroup(group);
         radioEdit.setToggleGroup(group);
         radioDelete.setToggleGroup(group);
@@ -69,29 +70,32 @@ public class IndexController implements Initializable {
 
         // Set cell value factory to tableview
         // PropertyValue Factory must be the same with the one set in model class
-//        columnId.setCellValueFactory(new PropertyValueFactory<>("id"));
         columnNim.setCellValueFactory(new PropertyValueFactory<>("nim"));
         columnNama.setCellValueFactory(new PropertyValueFactory<>("nama"));
         columnProdi.setCellValueFactory(new PropertyValueFactory<>("prodi"));
 
+        // Fill table with data
         tableMahasiswa.setItems(null);
         tableMahasiswa.setItems(data);
 
+        // When user clicked the RadioButton
         group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> observableValue, Toggle toggle, Toggle t1) {
+                //get selected RadioButton
                 RadioButton rb = (RadioButton) group.getSelectedToggle();
                 if(rb != null) {
                     mode = rb.getText();
                     System.out.println(mode);
+                    // Change the ActionButton according to the mode
                     if(mode.equals("New")){
+                        // Clear the TextField if mode == New
                         btnAction.setText("Save");
                         textFieldNim.setText("");
                         textFieldNama.setText("");
                         textFieldProdi.setText("");
                     }else if(mode.equals("Edit")){
                         btnAction.setText("Update");
-
                     }else if(mode.equals("Delete")){
                         btnAction.setText("Delete");
                     }
